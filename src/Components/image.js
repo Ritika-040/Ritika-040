@@ -1,15 +1,17 @@
 import React from "react";
 import "./image.css";
+import { useState } from "react";
+
 const Image = props => {
-  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
-    <React.Fragment>
+    <>
       <img
         className="image thumb"
         alt={props.alt}
         src={props.thumb}
         style={{ visibility: isLoaded ? "hidden" : "visible" }}
-      />
+      /> 
       <img
         onLoad={() => {
           setIsLoaded(true);
@@ -19,6 +21,6 @@ const Image = props => {
         alt={props.alt}
         src={props.src}
       />
-    </React.Fragment>
+    </>
   );
 };export default Image;

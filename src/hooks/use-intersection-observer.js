@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 
 const useIntersectionObserver = ({
     target,
@@ -6,7 +7,7 @@ const useIntersectionObserver = ({
     threshold = 0.1,
     rootMargin = "0px"
   }) => {
-    React.useEffect(() => {
+      useEffect(() => {
       const observer = new IntersectionObserver(onIntersect, {
         rootMargin,
         threshold

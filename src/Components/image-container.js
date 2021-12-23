@@ -1,9 +1,12 @@
 import React from "react";
 import useIntersectionObserver from "../hooks/use-intersection-observer";
 import "./image-container.css";
+import { useRef } from "react";
+import { useState } from "react";
+
 const ImageContainer = props => {
-  const ref = React.useRef();
-  const [isVisible, setIsVisible] = React.useState(false);useIntersectionObserver({
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);useIntersectionObserver({
     target: ref,
     onIntersect: ([{ isIntersecting }], observerElement) => {
       if (isIntersecting) {
